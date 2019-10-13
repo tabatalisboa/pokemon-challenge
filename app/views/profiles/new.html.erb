@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6 form-centered">
+      <h2>Pokémon Trainer</h2>
+
+      <%= simple_form_for @profile, url: profiles_path, method: :post do |f| %>
+        <%= f.input :name %>
+        <%= f.input :age %>
+        <%= f. input :sex %>
+        <%= f.input :profile_image %>
+        <%= f.submit "Create Pokémon Trainer" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

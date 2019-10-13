@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :teams
 
-  validates :name, :age, :sex, :profile_image, presence: true
+  validates :name, :age, :sex, :profile_image, presence: true, on: :update
 end
