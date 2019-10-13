@@ -1,13 +1,17 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-6 form-centered">
+<div class="main-container">
+  <div class="row">
 
-    <h1>Current User <%= current_user.name %></h1>
-    <p>Age: <%= current_user.age %></p>
-    <p>Sex: <%= current_user.sex %></p>
-
-    <%= link_to "Create Pokémon Team", new_team_path, class: "btn btn-primary btn-lg" %>
-
+    <div class="cards">
+      <h1><%= current_user.name %>Pokémon Trainer</h1>
+      <p>Age: <%= current_user.age %></p>
+      <p>Sex: <%= current_user.sex %></p>
     </div>
+
+    <div class="cards">
+      <%= link_to "Create Pokémon Team", new_team_path, class: "btn btn-primary btn-lg" %>
+    </div>
+
   </div>
 </div>
+
+
