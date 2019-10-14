@@ -1,0 +1,8 @@
+<p>Which Pokémon are you adding?</p>
+
+<%= form_tag pokemons_path, method: :post do %>
+  <%= text_field_tag :name, placeholder: "Pokemon name" %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+

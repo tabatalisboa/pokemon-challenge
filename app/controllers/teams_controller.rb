@@ -1,10 +1,12 @@
 class TeamsController < ApplicationController
   def new
     @team = Team.new
+    @team.user = current_user
   end
 
   def create
-    Team.create(team_params) unless @team.pokemons.count <= 6
+    @team.user = current_user
+    Team.create(team_params)
   end
 
   private
