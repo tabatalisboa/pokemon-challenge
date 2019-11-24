@@ -1,0 +1,9 @@
+<p>Which Pokémon are you adding?</p>
+
+<%= simple_form_for(@pokemon) do |f| %>
+  <%= f.search_field :name, label: "Pokémon" %>
+  <%= f.submit "Search" %>
+<% end %>
+
+<!-- <h1><%#= @pokemon["name"] %></h1>
+<h2><%#= @pokemon["types"][0]["type"]["name"] %></h2> -->

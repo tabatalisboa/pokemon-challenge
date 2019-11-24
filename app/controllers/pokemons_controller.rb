@@ -2,34 +2,39 @@ require 'json'
 require 'open-uri'
 
 class PokemonsController < ApplicationController
-  before_action :find_pokemon
-  def show
-    @pokemon = Pokemon.find(params[:id])
-    @pokemon = Pokemon.new(name: pokemon_features[:name], pokemon_type: pokemon_features["types"][0]["type"]["name"])
+  # before_action :find_pokemon, only: :index
+
+  def index
+    @pokemon = Pokemon.new(params[:id])
   end
 
-  def new
-    @pokemon = Pokemon.new
-  end
+  # def show
+  #   @pokemon = Pokemon.find(params[:id])
+  #   @pokemon = Pokemon.new(name: pokemon_features[:name], pokemon_type: pokemon_features["types"][0]["type"]["name"])
+  # end
 
-  def create
-    @pokemon = Pokemon.new(pokemon_params)
-    if @pokemon.save
-      redirect_to :show
-    else
-      redirect_to new_pokemon_path
-    end
-  end
+  # def new
+  #   @pokemon = Pokemon.new
+  # end
 
-  private
+  # def create
+  #   @pokemon = Pokemon.new(pokemon_params)
+  #   if @pokemon.save
+  #     redirect_to :show
+  #   else
+  #     redirect_to new_pokemon_path
+  #   end
+  # end
 
-  def pokemon_params
-    params.require(:pokemon).permit(:name, :pokemon_type)
-  end
+  # private
 
-  def find_pokemon
-    url = "https://pokeapi.co/api/v2/pokemon/#{params[:id]}"
-    pokemon_serialized = open(url).read
-    pokemon_features = JSON.parse(pokemon_serialized)
-  end
+  # def pokemon_params
+  #   params.require(:pokemon).permit(:name, :pokemon_type)
+  # end
+
+  # def find_pokemon
+  #   url = "https://pokeapi.co/api/v2/pokemon/#{params[:id]}"
+  #   pokemon_serialized = open(url).read
+  #   @pokemon = JSON.parse(pokemon_serialized)
+  # end
 end
