@@ -2,7 +2,7 @@ require 'json'
 require 'open-uri'
 
 class PokemonsController < ApplicationController
-  before_action :find_pokemon, only: [:index, :new]
+  before_action :find_pokemon, only: [:index, :new, :create]
 
   def index
   end
@@ -18,20 +18,16 @@ class PokemonsController < ApplicationController
     @pokemon.pokemon_type = @pokemon_json["types"][0]["type"]["name"]
   end
 
-  # def create
-  #   @pokemon = Pokemon.new(pokemon_params)
-  #   if @pokemon.save
-  #     redirect_to :show
-  #   else
-  #     redirect_to new_pokemon_path
-  #   end
-  # end
+  def create
+    Pokemon.create(pokemon_params)
+    redirect_to new_team_path
+  end
 
-  # private
+  private
 
-  # def pokemon_params
-  #   params.require(:pokemon).permit(:name, :pokemon_type)
-  # end
+  def pokemon_params
+    params.require(:pokemon).permit(:name, :pokemon_type)
+  end
 
   def find_pokemon
     url = "https://pokeapi.co/api/v2/pokemon/#{params[:name]}"
