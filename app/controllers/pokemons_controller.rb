@@ -19,7 +19,8 @@ class PokemonsController < ApplicationController
   end
 
   def create
-    Pokemon.create(pokemon_params)
+    @pokemon = Pokemon.create(pokemon_params)
+
     redirect_to new_team_path
   end
 

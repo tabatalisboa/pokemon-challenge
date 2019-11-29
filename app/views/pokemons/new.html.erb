@@ -1,5 +1,5 @@
 <h1><%= @pokemon.name %></h1>
 <h2><%= @pokemon.pokemon_type %></h2>
 
-<%= link_to "Add to team", pokemons_path %>
+<%= link_to "Add to team", pokemons_path(@pokemon), method: :post %>
 <%= link_to "Search for Pokémon", pokemons_path %>

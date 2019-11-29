@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :teams
   has_many :pokemons, through: :teams
 
-  validates :name, :age, :sex, :profile_image, presence: true, on: :update
+  validates :name, :age, :sex, presence: true, on: :update
 end
