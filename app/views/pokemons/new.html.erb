@@ -1,5 +1,11 @@
 <h1><%= @pokemon.name %></h1>
 <h2><%= @pokemon.pokemon_type %></h2>
 
-<%= link_to "Add to team", pokemons_path(@pokemon), method: :post %>
+
+<%= form_with model: @pokemon, method: "post" do |f| %>
+  <%= f.hidden_field :name %>
+  <%= f.hidden_field :pokemon_type %>
+  <%= submit_tag "Add to Team" %>
+<% end %>
+
 <%= link_to "Search for Pokémon", pokemons_path %>

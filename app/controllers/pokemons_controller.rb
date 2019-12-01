@@ -2,7 +2,7 @@ require 'json'
 require 'open-uri'
 
 class PokemonsController < ApplicationController
-  before_action :find_pokemon, only: [:index, :new, :create]
+  before_action :find_pokemon, only: [:new]
 
   def index
   end
