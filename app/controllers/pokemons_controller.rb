@@ -19,9 +19,11 @@ class PokemonsController < ApplicationController
   end
 
   def create
-    @pokemon = Pokemon.create(pokemon_params)
+    @pokemon = Pokemon.new(pokemon_params)
+    @pokemon.team = current_user.teams.first
+    @polemon.save
 
-    redirect_to new_team_path
+    redirect_to pokemons_path
   end
 
   private

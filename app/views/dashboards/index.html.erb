@@ -8,10 +8,10 @@
     </div>
 
     <div class="cards">
-      <%= link_to "Create Pokémon Team", new_team_path, class: "btn btn-primary btn-lg" %>
+      <%= form_with url: teams_path, method: :post, local: true do %>
+        <%= submit_tag("Create Team") %>
+      <% end %>
     </div>
 
   </div>
 </div>
-
-
