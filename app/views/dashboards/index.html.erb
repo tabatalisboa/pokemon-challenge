@@ -1,13 +1,13 @@
-<div class="main-container">
-  <div class="row">
-
-    <div class="cards">
-      <h1><%= current_user.name %>Pokémon Trainer</h1>
-      <p>Age: <%= current_user.age %></p>
-      <p>Sex: <%= current_user.sex %></p>
+<div class="container">
+    <div class="row">
+      <h1><%= current_user.name %> : Pokémon Trainer</h1>
+      <ul>
+        <li><p>Age: <%= current_user.age %></p></li>
+        <li><p>Sex: <%= current_user.sex %></p></li>
+      </ul>
     </div>
 
-    <div class="cards">
+    <div class="row">
       <%= form_with url: teams_path, method: :post, local: true do %>
         <%= submit_tag("Create Team") %>
       <% end %>

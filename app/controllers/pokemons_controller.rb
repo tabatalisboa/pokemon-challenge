@@ -2,7 +2,7 @@ require 'json'
 require 'open-uri'
 
 class PokemonsController < ApplicationController
-  before_action :find_pokemon, only: [:new]
+  before_action :find_pokemon, only: [:new, :create]
 
   def index
   end
@@ -21,8 +21,7 @@ class PokemonsController < ApplicationController
   def create
     @pokemon = Pokemon.new(pokemon_params)
     @pokemon.team = current_user.teams.first
-    @polemon.save
-
+    @pokemon.save
     redirect_to pokemons_path
   end
 
