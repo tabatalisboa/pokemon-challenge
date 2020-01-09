@@ -110,7 +110,7 @@ GEM
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
-      rack (>= 2.0.8)
+      rack (>= 1.0, < 3)
     rails (5.2.3)
       actioncable (= 5.2.3)
       actionmailer (= 5.2.3)
